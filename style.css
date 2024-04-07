@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+  
+}
+
+:root {
+    --yellow: #F4D04E;
+    --black: #111111;
+    --white: #ffffff;
+    --grey: #7F7F7F;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+    font-style: normal;
+    display: grid;
+    place-items: center;
+    
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.card {
+    width: 20.4375rem;
+    margin: 0 1.5rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--white);
+    border-radius: 1.25rem;
+    box-shadow: 8px 8px var(--black);
+    border: 1px solid var(--black);
+}
+.main-logo {
+    width: 17.4375rem;
+    height: 12.5rem;
+    border-radius: .625rem;
+}
+
+.tag {
+    background-color: var(--yellow);
+    font-size: .75rem;
+    font-weight: 800;
+    line-height: 1.384rem;
+    padding: 0.25rem .75rem;
+    border-radius: .25rem;
+}
+
+.published-date {
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.875rem;
+}
+
+.description {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.313rem;
+    color: var(--grey);
+}
+
+.author-image {
+    width: 2rem;
+    height: 2rem;
+}
+
+.author-name {
+    font-size: .875rem;
+    font-weight: 800;
+    line-height: 1.3125rem;
+}
