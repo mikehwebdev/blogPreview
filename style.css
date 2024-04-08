@@ -50,7 +50,7 @@ body {
 
 
 .main-logo-container {
-    background: url('../img/blogimage.png') no-repeat center top;
+    background: url('img/blogimage.png') no-repeat center top;
     border-radius: .625rem;
     align-self: self-start;
     grid-area: logo;    
