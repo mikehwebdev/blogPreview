@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-  
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -11,32 +12,32 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Figtree', sans-serif;
     font-style: normal;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--yellow);
     color: var(--black);
+    min-height: 100vh;
 }
 
 .card {
-    width: 20.4375rem; 
+    min-width: 20.44rem; 
+    max-width: 24rem;
     margin: 0 1.5rem;
     display: grid;
     place-items: center;
     background-color: var(--white);
     border-radius: 1.25rem;
-    box-shadow: 8px 8px var(--black);
+    box-shadow: .5rem .5rem var(--black);
     border: 1px solid var(--black);
     display: grid;
     grid-template-rows: 1.5rem 14rem 2.375rem 1.875rem 2.625rem 3.938rem 1.5rem 2rem 1.5rem;
-    grid-template-columns: 1.5rem 2.75rem 14.6875rem 1.5rem;
+    grid-template-columns: 1.5rem 2.75rem minmax(14.6875rem, 18.25rem) 1.5rem;
     grid-template-areas: 
     ". . . ."
-    "logo logo logo logo"
+    ". logo logo ."
     ". tag tag ."
     ". date date ."
     ". title title ."
@@ -44,27 +45,34 @@ body {
     ". . . ."
     ". auth-logo auth-name ."
     ;
+    cursor: pointer;
 }
-.main-logo {
-    width: 17.4375rem;
-    height: 12.5rem;
+
+
+.main-logo-container {
+    background: url('../img/blogimage.png') no-repeat center top;
     border-radius: .625rem;
     align-self: self-start;
-    grid-area: logo;
+    grid-area: logo;    
+    height: 100%;
+    width: 100%;
 }
+
+
 
 .tag {
     background-color: var(--yellow);
     font-size: .75rem;
     font-weight: 800;
-    line-height: 1.384rem;
+    line-height: 1.125rem;
     padding: 0.25rem .75rem;
     border-radius: .25rem;
     grid-area: tag;
     justify-self: self-start;
-    align-self: self-end;
+    align-self: self-start;
     height: 1.625rem;
     width: 4.5625rem;
+    
 }
 
 .published-date {
@@ -73,7 +81,7 @@ body {
     line-height: 1.125rem;
     grid-area: date;
     justify-self: self-start;
-    align-self: self-end;
+    align-self: self-start;
 }
 
 .title {
@@ -82,7 +90,11 @@ body {
     line-height: 1.875rem;
     grid-area: title;
     justify-self: self-start;
-    align-self: self-end;
+    align-self: self-start;
+}
+
+.title:hover {
+    color: var(--yellow);
 }
 
 .description {
@@ -92,6 +104,7 @@ body {
     color: var(--grey);
     grid-area: description;
     justify-self: self-start;
+    text-align: left;
 }
 
 .author-image {
@@ -107,4 +120,36 @@ body {
     line-height: 1.3125rem;
     grid-area: auth-name;
     justify-self: self-start;
+}
+
+@media screen and (min-width:425px) {
+   .card {
+    transition: all 300ms;
+        grid-template-rows: 1.5rem 14rem 2.563rem 2.063rem 3rem 4.5rem 1.5rem 2rem 1.5rem;
+   }
+
+   .card:hover {
+    box-shadow: 1rem 1rem var(--black);
+    transition: all 300ms;
+   }
+
+   .tag {
+        width: 5.125rem;
+        height: 1.813rem;
+   }
+
+   .tag, .published-date {
+        font-size: 0.875rem;
+        line-height: 1.31rem;
+   }
+
+   .title {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+   }
+
+   .description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+   }
 }
