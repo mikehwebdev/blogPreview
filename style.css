@@ -17,13 +17,13 @@ body {
     font-style: normal;
     display: grid;
     place-items: center;
-    
+    min-height: 100vh;
     background-color: var(--yellow);
     color: var(--black);
 }
 
 .card {
-    width: 20.4375rem;
+    width: 20.4375rem; 
     margin: 0 1.5rem;
     display: grid;
     place-items: center;
@@ -31,11 +31,26 @@ body {
     border-radius: 1.25rem;
     box-shadow: 8px 8px var(--black);
     border: 1px solid var(--black);
+    display: grid;
+    grid-template-rows: 1.5rem 14rem 2.375rem 1.875rem 2.625rem 3.938rem 1.5rem 2rem 1.5rem;
+    grid-template-columns: 1.5rem 2.75rem 14.6875rem 1.5rem;
+    grid-template-areas: 
+    ". . . ."
+    "logo logo logo logo"
+    ". tag tag ."
+    ". date date ."
+    ". title title ."
+    ". description description ."
+    ". . . ."
+    ". auth-logo auth-name ."
+    ;
 }
 .main-logo {
     width: 17.4375rem;
     height: 12.5rem;
     border-radius: .625rem;
+    align-self: self-start;
+    grid-area: logo;
 }
 
 .tag {
@@ -45,18 +60,29 @@ body {
     line-height: 1.384rem;
     padding: 0.25rem .75rem;
     border-radius: .25rem;
+    grid-area: tag;
+    justify-self: self-start;
+    align-self: self-end;
+    height: 1.625rem;
+    width: 4.5625rem;
 }
 
 .published-date {
     font-size: .75rem;
     font-weight: 500;
     line-height: 1.125rem;
+    grid-area: date;
+    justify-self: self-start;
+    align-self: self-end;
 }
 
 .title {
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 1.875rem;
+    grid-area: title;
+    justify-self: self-start;
+    align-self: self-end;
 }
 
 .description {
@@ -64,15 +90,21 @@ body {
     font-weight: 500;
     line-height: 1.313rem;
     color: var(--grey);
+    grid-area: description;
+    justify-self: self-start;
 }
 
 .author-image {
     width: 2rem;
     height: 2rem;
+    grid-area: auth-logo;
+    justify-self: self-start;
 }
 
 .author-name {
     font-size: .875rem;
     font-weight: 800;
     line-height: 1.3125rem;
+    grid-area: auth-name;
+    justify-self: self-start;
 }
